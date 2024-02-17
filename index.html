@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Buy our best & high quality t shirts for men starting price is $29">
+  <title id="title">Best & high quality t shirts for men</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="catogry.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <a href="/index.html"><img src="images/logo-white.png" alt="Panamicz" width="125px" /></a>
+      </div>
+
+
+      <nav>
+        <ul id="MenuItems">
+          <li><a href="/">Home</a></li>
+          <li class="dropdown"><a href="">Categories</a>
+            <div class="dropdown-content">
+
+              <a href="/christen-tshirts.html">Christent t-shirt</a>
+              <a href="pokemon-coloring-book.html">pokemon coloring book</a>
+
+          </li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </nav>
+      <a href="cart.html"><img src="https://i.ibb.co/PNjjx3y/cart.png" alt="" width="30px" height="30px" /></a>
+      <img src="https://i.ibb.co/6XbqwjD/menu.png" alt="" class="menu-icon" onclick="menutoggle()" />
+    </div>
+  </div>
+
+  <div class="small-container">
+        
+    <div class="row row-2">
+      <h2 id="ttl"></h2>
+      
+    </div>
+    <div class="row">
+      
+      <div class="col-4">
+        <div class="catagory">christian t shirts for men</div>
+        <a href="https://boldblendtees.creator-spring.com/listing/i-heart-jesus-t-shirt">
+        <img src="https://vangogh.teespring.com/v3/image/-8kiD9AOdoL358ZR8XhSIa8gU30/800/800.jpg" alt="christian t shirts for men" />
+        <h4>"I Heart Jesus" T-Shirt</h4>
+        <p>64$</p></a>
+      </div>
+
+      <div class="col-4">
+        <div class="catagory">christian t shirts for men</div>
+        <a href="https://boldblendtees.creator-spring.com/listing/faithful-fashion-i-love-jesus?product=369">
+        <img src="https://vangogh.teespring.com/v3/image/E2fRAV0nRR6i68b59LhoNyjgN0Q/800/800.jpg" alt="christian t shirts" />
+        <h4>Faithful Fashion: I Love Jesus Tee 💙🙏 </h4>
+        <p>49$</p></a>
+      </div>
+
+        <div class="col-4">
+          <div class="catagory">christian t shirts for men</div>
+          <a href="https://boldblendtees.creator-spring.com/listing/divine-presence-tee">
+          <img src="https://vangogh.teespring.com/v3/image/nYXiu47zVYwdMG-HNAbjfF1tyNs/800/800.jpg" alt="" />
+          <h4>Divine Presence Tee </h4>
+          <p>49$</p></a>
+        </div>
+     
+
+        <div class="col-4">
+          <div class="catagory">christian t shirts for men</div>
+          <a href="https://boldblendtees.creator-spring.com/listing/buy-i-love-jesus-tee?product=2256">
+          <img src="https://vangogh.teespring.com/v3/image/Yo3SLWzMvTQLkBpdNrXx2BtlzOw/800/800.jpg" alt="" />
+          <h4>I Love Jesus' tee!</h4>
+          <p>69$</p></a>
+        </div>
+    </div>
+  </div>
+    <!--Content-->
+
+
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+
+
+          <div class="footer-col-2">
+            <img src="images/logo-black.png" alt="Panamicz" />
+            <p>
+              Where Comfort Meets Confidence, Style Meets Statement.
+            </p>
+          </div>
+
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+
+          <div class="footer-col-4">
+            <h3>Follow us</h3>
+            <ul>
+              <li>Twitter</li>
+              <li>Instagram</li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p class="copyright">Copyright &copy; 2024 - Boldblendtees</p>
+      </div>
+    </div>
+
+    <!-- js for toggle menu -->
+    <script>
+      let catagory = document.querySelector('.catagory').textContent;
+      let title = document.querySelector('#title');
+      let ttl = document.querySelector('#ttl');
+      ttl.textContent = "All Products of " + catagory
+      title.textContent = 'Best and height quality ' + catagory
+      var MenuItems = document.getElementById('MenuItems');
+      MenuItems.style.maxHeight = '0px';
+
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == '0px') {
+          MenuItems.style.maxHeight = '200px';
+        } else {
+          MenuItems.style.maxHeight = '0px';
+        }
+      }
+
+
+
+      let container2 = document.querySelector('.container2');
+      let box = document.querySelector('#box');
+      let icon = document.querySelector('#icon');
+
+      container2.addEventListener('mouseover', function () {
+        box.classList.add('box22')
+        icon.classList.add('icon22')
+      })
+
+    </script>
+</body>
+
+</html>
