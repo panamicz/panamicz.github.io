@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buy now our best & high quality christian t shirts for men starting price is $29">
+    <title id="title">Best & high quality christian t shirts for men</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="catogry.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <a href="/index.html"><img src="images/logo-white.png" alt="Panamicz" width="125px" /></a>
+          </div>
+
+
+          <nav>
+            <ul id="MenuItems">
+              <li><a href="/">Home</a></li>
+              <li class="dropdown"><a href="/category">Categories</a>
+                <div class="dropdown-content">
+                 
+                    <a href="/christen-tshirts.html">Christent t-shirt</a>
+                    <a href="pokemon-coloring-book.html">pokemon coloring book</a>
+            
+              </li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+          </nav>
+          <a href="cart.html"><img src="https://i.ibb.co/PNjjx3y/cart.png" alt="" width="30px" height="30px" /></a>
+          <img src="https://i.ibb.co/6XbqwjD/menu.png" alt="" class="menu-icon" onclick="menutoggle()" />
+        </div>
+      </div>
+      
+      <!--Content-->
+
+      <div class="container11">
+        <h2>About Us</h2>
+        <p>Panamicz is your ultimate destination for a wide range of products, from trendy t-shirts to captivating books. We aim to provide our customers with a seamless online shopping experience, offering high-quality items at competitive prices.</p>
+        
+        <p>At Panamicz, we believe in the power of simplicity and convenience. Our user-friendly interface allows you to browse through our diverse collection effortlessly, whether you're searching for the perfect gift or treating yourself to something special.</p>
+        
+        <p>Customer satisfaction is our top priority. We strive to exceed your expectations with exceptional customer service and fast shipping. With Panamicz, you can shop with confidence, knowing that your shopping experience is our utmost concern.</p>
+        
+        <p>Join the Panamicz community today and discover a world of endless possibilities. Thank you for choosing Panamicz for all your shopping needs.</p>
+      </div>
+      
+      <!-- Footer -->
+      <div class="footer">
+        <div class="container">
+          <div class="row">
+  
+  
+            <div class="footer-col-2">
+              <img src="images/logo-black.png" alt="Panamicz" />
+              <p>
+                Where Comfort Meets Confidence, Style Meets Statement.
+              </p>
+            </div>
+  
+            <div class="footer-col-3">
+              
+            </div>
+  
+            <div class="footer-col-4">
+              <h3>Follow us</h3>
+              <ul>
+                <li>Twitter</li>
+                <li>Instagram</li>
+              </ul>
+            </div>
+          </div>
+          <hr />
+          <p class="copyright">Copyright &copy; 2024 - Panamicz</p>
+        </div>
+      </div>
+      
+      <!-- js for toggle menu -->
+      <script>
+       let catagory = document.querySelector('.catagory').textContent;
+       let title = document.querySelector('#title');
+       let ttl = document.querySelector('#ttl');
+       ttl.textContent = "All Products of " + catagory
+        title.textContent = 'Best and height quality ' +catagory
+        var MenuItems = document.getElementById('MenuItems');
+        MenuItems.style.maxHeight = '0px';
+      
+        function menutoggle() {
+          if (MenuItems.style.maxHeight == '0px') {
+            MenuItems.style.maxHeight = '200px';
+          } else {
+            MenuItems.style.maxHeight = '0px';
+          }
+        }
+
+
+        
+
+
+      </script>
+</body>
+</html>
